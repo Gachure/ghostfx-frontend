@@ -2,12 +2,32 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Dashboard.css";
 
+// Define types
+type Session = {
+  period: string;
+  time: string;
+  result: string;
+};
+
+type Report = {
+  time: string;
+  type: string;
+  result: string;
+  profit: number;
+};
+
+type Summary = {
+  trades: number;
+  profit: number;
+  rate: number;
+};
+
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("overview");
-  const [summary, setSummary] = useState({ trades: 0, profit: 0, rate: 0 });
-  const [reports, setReports] = useState([]);
-  const [sessions, setSessions] = useState([]);
-  const [balance, setBalance] = useState(0); // ✅ Add this line
+  const [summary, setSummary] = useState<Summary>({ trades: 0, profit: 0, rate: 0 });
+  const [reports, setReports] = useState<Report[]>([]);
+  const [sessions, setSessions] = useState<Session[]>([]);
+  const [balance, setBalance] = useState(0);
 
   useEffect(() => {
     // Fetch dashboard summary, reports, sessions
