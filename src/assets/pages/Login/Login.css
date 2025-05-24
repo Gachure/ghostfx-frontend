@@ -1,0 +1,154 @@
+.login-page {
+  height: 100vh;
+  width: 100%;
+  background: #0f0f0f url('./background.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.glow-bg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #00ffcc 0%, transparent 70%);
+  opacity: 0.3;
+  animation: pulse 4s ease-in-out infinite alternate, colorChange 6s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+.glow-top-left {
+  top: -100px;
+  left: -100px;
+}
+
+.glow-top-right {
+  top: -100px;
+  right: -100px;
+}
+
+.glow-bottom-left {
+  bottom: -100px;
+  left: -100px;
+}
+
+.glow-bottom-right {
+  bottom: -100px;
+  right: -100px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background: radial-gradient(circle, #00ffcc 0%, transparent 70%);
+  }
+  25% {
+    background: radial-gradient(circle, #ff00cc 0%, transparent 70%);
+  }
+  50% {
+    background: radial-gradient(circle, #ffcc00 0%, transparent 70%);
+  }
+  75% {
+    background: radial-gradient(circle, #00ccff 0%, transparent 70%);
+  }
+  100% {
+    background: radial-gradient(circle, #00ffcc 0%, transparent 70%);
+  }
+}
+
+.login-card {
+  position: relative;
+  z-index: 2;
+  background: #1b1b1b;
+  padding: 50px 60px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.2);
+  text-align: center;
+  color: #ffffff;
+  max-width: 500px;
+  width: 100%;
+  border: 1px solid #00ffcc33;
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: fallIn 1s forwards 0.5s;
+}
+
+@keyframes fallIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #00ffcc;
+  box-shadow: 0 0 15px #00ffccaa;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 26px;
+  color: #00ffcc;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.deriv-login-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffcc80;
+  transition: all 0.3s ease-in-out;
+}
+
+.deriv-login-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffcc;
+}
+.token-input {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
