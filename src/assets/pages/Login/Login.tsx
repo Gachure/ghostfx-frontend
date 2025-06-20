@@ -6,7 +6,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Temporarily skip Deriv login and go straight to dashboard
+    // For now, simulate login by storing a fixed token
+    localStorage.setItem("derivToken", "H2eemDJQJ6BwsJC");
     navigate('/dashboard');
   };
 
